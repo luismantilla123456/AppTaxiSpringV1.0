@@ -5,7 +5,9 @@
  */
 package com.administradorReclamos;
 
-import com.administradorPedido.Pedido;
+import Modelo.Reclamo;
+import ClasesDAO.ReclamoDAO;
+import Modelo.Pedido;
 import java.util.List;
 import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;

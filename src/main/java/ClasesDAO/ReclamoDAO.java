@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.administradorBD;
+package ClasesDAO;
 
+import Modelo.Pedido;
+import Modelo.Reclamo;
 import java.util.List;
 import javax.sql.DataSource;
 
@@ -12,18 +14,16 @@ import javax.sql.DataSource;
  *
  * @author Luis
  */
-public interface UsuarioDAO {
-    //inicializa la base de datos
+public interface ReclamoDAO {
     public void setDataSource(DataSource ds);
     // crear uno nuevo
-    public void create(String name, String email, Integer telefono, String direccion,String password, Integer sexo);
+    public void create(String reclamo,String fecha,Integer idUsuario);
     //listar datos del usuario segun id
-    public Usuario getUsuario(String telefono,String password);
+    public Pedido getReclamo(int id);
     // listar los usuarios
-    public List<Usuario> listarUsuario();
+    public List<Reclamo> listareclamos(Integer id);
     // elimina un usuari por su id
     public void delete(Integer id);
     //actualizar un usuario
     public void update(Integer id,Integer age);
-    
 }

@@ -13,13 +13,13 @@
     <title>AppTaxi>Reservas</title>
 
     <!-- CSS -->
-	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-        <link href="css/styles.css" rel="stylesheet">
-	<link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet">
+        <link href="${pageContext.request.contextPath}/css/styles.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
     <!-- Favicons -->
-    <link href="images/favicon/favicon.png" rel="shortcut icon">
-    <script src="js/modernizr-2.7.1.min.js"></script>
-    <script src="js/jquery-2.1.0.min.js"></script>
+    <link href="${pageContext.request.contextPath}/images/favicon/favicon.png" rel="shortcut icon">
+    <script src="${pageContext.request.contextPath}/js/modernizr-2.7.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-2.1.0.min.js"></script>
     
   </head>
   <body class="index" id="to-top">
@@ -43,16 +43,15 @@
                 <div class="col-md-6">
                     <figure>
                         <a href="./index.html">
-                        <img class="img-logo" src="images/logo1.png" alt="">
+                        <img class="img-logo" src="${pageContext.request.contextPath}/images/logo1.png" alt="">
                         </a>
                     </figure> 
                 </div>
                 <div class="col-md-6">
                     <figure>
-                        <img class="img-logo-user" src="images/slider_persona.png" alt="">
+                        <img class="img-logo-user" src="${pageContext.request.contextPath}/images/slider_persona.png" alt="">
                     </figure> 
                     <p>${usuario}</p>
-                    <p>${tamanno}</p>
                 </div>
             </div>
             <div class="buttons-wrapper">
@@ -72,6 +71,7 @@
                                             <th>Unidades  </th>
                                             <th>Fecha     </th>
                                             <th>Referencia</th>
+                                            <td>Modificar</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -81,6 +81,12 @@
                                                 <td>${fila.unidades}</td>
                                                 <td>${fila.fecha}</td>
                                                 <td>${fila.referencia}</td>
+                                                <td>
+                                                    <form action="modificarPedido.html" method="GET">
+                                                        <input name="id" hidden="hidden" value="${fila.id}"/>
+                                                        <input type="submit" value="Modificar"/>
+                                                    </form>
+                                                </td>
                                             </tr>
                                         </c:forEach>
                                     </tbody>
@@ -92,8 +98,6 @@
                     </div>
                     <!-- /.panel -->
                 </div>
-                
-                
             </div>
           </div>
           <div class="col-md-5 col-sm-5">
@@ -101,10 +105,17 @@
         </div> <!-- /.row -->
       </div> <!-- /.container -->
     </header> <!-- /.mainBanner -->
-    <script src="js/jquery-2.1.0.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/customScripts.js"></script>
+    
+    
+    <script src="${pageContext.request.contextPath}/js/jquery-2.1.0.min.js"></script>
+    <script src="${pageContext.request.contextPath}/css/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/customScripts.js"></script>
     <script type="text/javascript"> 
+    </script>
+    <script>
+        $(function() {
+            
+        });
     </script>
   </body>
 </html>

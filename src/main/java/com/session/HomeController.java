@@ -5,7 +5,7 @@
  */
 package com.session;
 
-import com.administradorBD.Usuario;
+import Modelo.Usuario;
 import com.administradorBD.UsuarioJDBCTemplate;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +45,7 @@ public class HomeController {
             persona.setId(usuario.getId());
         }
         model.addAttribute("usuario", persona.getNombre());
-        return "index";
+        return "/index";
     }
     
     @RequestMapping(value = "/logOut")

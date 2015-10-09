@@ -5,6 +5,8 @@
  */
 package com.administradorBD;
 
+import Modelo.Usuario;
+import ClasesDAO.UsuarioDAO;
 import java.util.List;
 import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;

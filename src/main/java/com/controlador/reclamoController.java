@@ -25,6 +25,19 @@ public class reclamoController {
     
     @Autowired private PersonaSession persona;
     
+    @RequestMapping(value = "/mvlReclamo")
+    public String mvlRegistrarReclamo(
+            @RequestParam("reclamo") String reclamo,
+            @RequestParam("fecha") String fecha,
+            @RequestParam("id") Integer id
+            ){
+        ApplicationContext contx = new ClassPathXmlApplicationContext("springjdbc.xml");
+        ReclamoJDBCTemplate reclamoJDBCTemplate = (ReclamoJDBCTemplate) contx.getBean("reclamoJDBCTemplate");
+        
+        reclamoJDBCTemplate.create(reclamo, fecha, id);
+        
+        return "index";
+    }
     @RequestMapping(value = "/registrarReclamo")
     public String registrarReclamo(
             @RequestParam("nombre") String nombre,

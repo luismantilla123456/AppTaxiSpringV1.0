@@ -5,7 +5,7 @@
  */
 package com.controlador;
 
-import com.administradorBD.Usuario;
+import Modelo.Usuario;
 import com.administradorBD.UsuarioJDBCTemplate;
 import com.session.PersonaSession;
 import java.util.List;
@@ -39,7 +39,7 @@ public class nuevoUsuarioController {
         ApplicationContext context =  new ClassPathXmlApplicationContext("springjdbc.xml");
         UsuarioJDBCTemplate usuarioJDBCTemplate =(UsuarioJDBCTemplate)context.getBean("usuarioJDBCTemplate");
 
-        usuarioJDBCTemplate.create(nombre, email, Integer.parseInt(telefono),password, direccion, Integer.parseInt(sexo));
+        usuarioJDBCTemplate.create(nombre, email, Integer.parseInt(telefono),direccion, password, Integer.parseInt(sexo));
 //        List<Usuario> usuario = usuarioJDBCTemplate.listarUsuario();
         String usuario = persona.getNombre();
         model.addAttribute("usuario", usuario);

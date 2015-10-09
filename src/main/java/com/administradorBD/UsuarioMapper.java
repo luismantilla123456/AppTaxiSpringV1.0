@@ -5,6 +5,7 @@
  */
 package com.administradorBD;
 
+import Modelo.Usuario;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import org.springframework.jdbc.core.RowMapper;

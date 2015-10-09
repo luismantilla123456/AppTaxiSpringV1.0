@@ -6,7 +6,7 @@
 package com.controlador;
 
 import com.administradorBD.UsuarioJDBCTemplate;
-import com.administradorPedido.Pedido;
+import Modelo.Pedido;
 import com.administradorPedido.PedidoJDBCTemplate;
 import com.administradorReclamos.ReclamoJDBCTemplate;
 import com.session.PersonaSession;
@@ -31,18 +31,6 @@ public class ListarPedidosController {
     @RequestMapping( value = "/listarPedidosReservas" )
     public String listarReservas(
         @RequestParam("id") String idUsuario,Model model){
-//        ApplicationContext context =  new ClassPathXmlApplicationContext("springjdbc.xml");
-//        PedidoJDBCTemplate reclamoJDBCTemplate = (PedidoJDBCTemplate) context.getBean("pedidoJDBCTemplate");
-//        //almacenar en la base de datos
-//        List<Pedido> reservas = null;
-//        String usuario = persona.getNombre();
-//        model.addAttribute("usuario", usuario);
-//        if ("Anonimo".equals(usuario)) {
-//            return "index";
-//        }else{
-//            reservas = reclamoJDBCTemplate.listarPedidos(Integer.valueOf(idUsuario));
-//        }
-//        
         
         return "index";
     }

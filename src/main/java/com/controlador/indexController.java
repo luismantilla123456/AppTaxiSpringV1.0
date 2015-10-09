@@ -5,12 +5,10 @@
  */
 package com.controlador;
 
-import com.administradorBD.Usuario;
+import Modelo.Usuario;
 import com.administradorBD.UsuarioJDBCTemplate;
-import com.administradorPedido.Pedido;
+import Modelo.Pedido;
 import com.administradorPedido.PedidoJDBCTemplate;
-import com.company.dao.Estudiante;
-import com.company.dao.EstudianteJDBCTemplate;
 import com.session.PersonaSession;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,10 +38,6 @@ public class indexController {
     
     @RequestMapping(value = "/login")
     public String login(Model model) {
-//        ApplicationContext context = 
-//             new ClassPathXmlApplicationContext("springjdbc.xml");
-//        UsuarioJDBCTemplate usuarioJDBCTemplate =(UsuarioJDBCTemplate)context.getBean("usuarioJDBCTemplate");
-
         String usuario = persona.getNombre();
         model.addAttribute("usuario", usuario);
         return "login";
@@ -110,8 +104,6 @@ public class indexController {
                 model.addAttribute("lista", pedidos );
             }
         }
-        
-        
         return "listarReservas";
     }
 }

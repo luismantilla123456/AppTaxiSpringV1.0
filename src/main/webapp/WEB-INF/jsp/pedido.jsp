@@ -13,13 +13,13 @@
     <title>AppTaxi>Pedido </title>
 
     <!-- CSS -->
-	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-        <link href="css/styles.css" rel="stylesheet">
-	<link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet">
+        <link href="${pageContext.request.contextPath}/css/styles.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
     <!-- Favicons -->
-    <link href="images/favicon/favicon.png" rel="shortcut icon">
-    <script src="js/modernizr-2.7.1.min.js"></script>
-    <script src="js/jquery-2.1.0.min.js"></script>
+    <link href="${pageContext.request.contextPath}/images/favicon/favicon.png" rel="shortcut icon">
+    <script src="${pageContext.request.contextPath}/js/modernizr-2.7.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-2.1.0.min.js"></script>
     
   </head>
   <body class="index" id="to-top">
@@ -43,13 +43,13 @@
                 <div class="col-md-6">
                     <figure>
                         <a href="./index.html">
-                        <img class="img-logo" src="images/logo1.png" alt="">
+                        <img class="img-logo" src="${pageContext.request.contextPath}/images/logo1.png" alt="">
                         </a>
                     </figure> 
                 </div>
                 <div class="col-md-6">
                     <figure>
-                        <img class="img-logo-user" src="images/slider_persona.png" alt="">
+                        <img class="img-logo-user" src="${pageContext.request.contextPath}/images/slider_persona.png" alt="">
                     </figure> 
                     <p>${usuario}</p>
                 </div>
@@ -60,19 +60,19 @@
                         <form action="registrarPedido.html" method="GET">
                             <div class="form-group">
                                 <label>Nombre</label>
-                                <input name="nombre" class="form-control" placeholder="juan" value="${nombre}" required>
+                                <input name="nombre" class="form-control" placeholder="juan" value="${pedido.nombre}" required>
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
-                                <input name="email" class="form-control" type="email" placeholder="juan1421@mimail.com" value="${email}" required>
+                                <input name="email" class="form-control" type="email" placeholder="juan1421@mimail.com" value="${pedido.email}" required>
                             </div>
                             <div class="form-group">
                                 <label>Telefono</label>
-                                <input name="telefono" class="form-control" pattern="^[1|2|3|4|5|6|7|8|9|0]\d{8}$" placeholder="94818755" value="${telefono}" required>
+                                <input name="telefono" class="form-control" pattern="^[1|2|3|4|5|6|7|8|9|0]\d{8}$" placeholder="94818755" value="${pedido.telefono}" required>
                             </div>
                             <div class="form-group">
                                 <label>Direccion</label>
-                                <input name="direccion" class="form-control" placeholder="Las flores de San Fernando 123" value="${direccion}" required>
+                                <input name="direccion" class="form-control" placeholder="Las flores de San Fernando 123" value="${pedido.direccion}" required>
                             </div>
                             <div class="form-group">
                                 <label>Numero unidades</label>
@@ -80,7 +80,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Fecha</label>
-                                <input name="fecha" type="date" class="form-control" required>
+                                <input id="fechaP" name="fecha" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Otros</label>
@@ -97,10 +97,17 @@
         </div> <!-- /.row -->
       </div> <!-- /.container -->
     </header> <!-- /.mainBanner -->
-    <script src="js/jquery-2.1.0.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/customScripts.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-2.1.0.min.js"></script>
+    <script src="${pageContext.request.contextPath}/css/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="${pageContext.request.contextPath}/js/customScripts.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script type="text/javascript"> 
+    </script>
+    <script>
+        $(function() {
+            $("#fechaP").datepicker({minDate: '0'}).datepicker("setDate",new Date());
+        });
     </script>
   </body>
 </html>

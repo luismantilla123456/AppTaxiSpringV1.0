@@ -13,13 +13,13 @@
     <title>AppTaxi</title>
 
     <!-- CSS -->
-	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-        <link href="css/styles.css" rel="stylesheet">
-	<link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet">
+        <link href="${pageContext.request.contextPath}/css/styles.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
     <!-- Favicons -->
-    <link href="images/favicon/favicon.png" rel="shortcut icon">
-    <script src="js/modernizr-2.7.1.min.js"></script>
-    <script src="js/jquery-2.1.0.min.js"></script>
+    <link href="${pageContext.request.contextPath}/images/favicon/favicon.png" rel="shortcut icon">
+    <script src="${pageContext.request.contextPath}/js/modernizr-2.7.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-2.1.0.min.js"></script>
     
   </head>
   <body class="index" id="to-top">
@@ -43,13 +43,13 @@
                     <div class="col-md-6 ">
                         <figure>
                             <a href="./index.html">
-                            <img class="img-logo" src="images/logo1.png" alt="">
+                            <img class="img-logo" src="${pageContext.request.contextPath}/images/logo1.png" alt="">
                             </a>
                         </figure> 
                     </div>
                     <div class="col-md-6 image-user-right">
                         <figure>
-                            <img class="img-logo-user" src="images/slider_persona.png" alt="">
+                            <img class="img-logo-user" src="${pageContext.request.contextPath}/images/slider_persona.png" alt="">
                         </figure> 
                         <p>${usuario}</p>
                     </div>
@@ -127,7 +127,7 @@
         <div class="row">
             <div class="col-md-4 highlightsCol">
                 <figure>
-                    <img class="highlightsImg" src="images/slider_persona.png" alt="">
+                    <img class="highlightsImg" src="${pageContext.request.contextPath}/images/slider_persona.png" alt="">
                 </figure>
                 <h4>RESERVA</h4>
                 <p>Ahora puedes consultar tus reservas, solo consulta aqui.</p>
@@ -141,7 +141,7 @@
             </div> 
             <div class="col-md-4 highlightsCol">
                 <figure>
-                    <img class="highlightsImg" src="images/us_servicios.png" alt="">
+                    <img class="highlightsImg" src="${pageContext.request.contextPath}/images/us_servicios.png" alt="">
                 </figure>
                 <h4>MIS RESERVAS</h4>
                 <p>Ahora puedes pedir tu taxi desde esta plataforma.</p>
@@ -155,7 +155,7 @@
             </div> 
             <div class="col-md-4 highlightsCol">
                 <figure>
-                    <img class="highlightsImg" src="images/us_reclamos.png" alt="">
+                    <img class="highlightsImg" src="${pageContext.request.contextPath}/images/us_reclamos.png" alt="">
                 </figure>
                 <h4>RECLAMO</h4>
                 <p>Tuviste algun problema con nuestro servicio? /n Cuantanos</p>
@@ -169,7 +169,7 @@
             </div>   
             <div class="col-md-4 highlightsCol">
                 <figure>
-                    <img class="highlightsImg" src="images/us_reclamos.png" alt="">
+                    <img class="highlightsImg" src="${pageContext.request.contextPath}/images/us_reclamos.png" alt="">
                 </figure>
                 <h4>COMUNIQUEMONOS</h4>
                 <p>Teléfonos</p>
@@ -185,9 +185,9 @@
       </div> 
     </section> <!-- /.highlights -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery-2.1.0.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/customScripts.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-2.1.0.min.js"></script>
+    <script src="${pageContext.request.contextPath}/css/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/customScripts.js"></script>
     <script type="text/javascript"> 
     </script>
   </body>

@@ -5,7 +5,9 @@
  */
 package com.administradorPedido;
 
-import com.administradorBD.Usuario;
+import Modelo.Pedido;
+import ClasesDAO.PedidoDAO;
+import Modelo.Usuario;
 import com.administradorBD.UsuarioMapper;
 import java.util.List;
 import javax.sql.DataSource;
@@ -34,8 +36,15 @@ public class PedidoJDBCTemplate implements PedidoDAO{
     }
     
     @Override
-    public Pedido getPedido(String telefono, String password) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Pedido getPedido(String idPedido,String idUsuario) {
+        Pedido pedido = null;
+        String SQL = "SELECT * FROM reserva WHERE idReserva = ? AND Usuario_idUsuario = ?";
+        try {
+            pedido = jdbcTemplateObject.queryForObject(SQL, new Object[]{idPedido, idUsuario}, new PedidoMapper());
+        } catch (Exception e) {
+        }
+        
+        return pedido;
     }
 
     @Override
@@ -52,13 +61,14 @@ public class PedidoJDBCTemplate implements PedidoDAO{
     }
 
     @Override
-    public void delete(Integer id) {
+    public void delete(Integer idReserva) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void update(Integer id, Integer age) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void update(String idPedido, String idUsuario,String direccion, Integer numeroUnidades, String fecha, String referencia) {
+        String sql = "UPDATE reserva SET ReservaDierccion = ?, ReservaNumeroUnidades = ?, ReservaFecha = ?, ReservaReferencia = ? WHERE idReserva = ? AND Usuario_idUsuario = ?";
+        jdbcTemplateObject.update( sql, direccion,numeroUnidades,fecha,referencia,idPedido,idUsuario);
     }
 
     @Override

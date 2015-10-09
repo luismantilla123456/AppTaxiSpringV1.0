@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
-  response.sendRedirect("http://localhost:8080/AppTaxi/index.html");
+  response.sendRedirect("http://localhost:8080/AppTaxi/rest/index.html");
 %>
 <!DOCTYPE html>
 <html>

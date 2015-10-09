@@ -5,6 +5,7 @@
  */
 package com.controlador;
 
+import Modelo.Pedido;
 import com.administradorBD.UsuarioJDBCTemplate;
 import com.administradorPedido.PedidoJDBCTemplate;
 import com.session.PersonaSession;
@@ -42,13 +43,80 @@ public class pedidoController {
         PedidoJDBCTemplate pedidoJDBCTemplate = (PedidoJDBCTemplate) contex.getBean("pedidoJDBCTemplate");
         
         String usuario = persona.getNombre();
-        
         if ("Anonimo".equals(usuario)) {
             return "index";
         }else{
             pedidoJDBCTemplate.create(direccion, Integer.parseInt(numeroUnidades), fecha, anotaciones, persona.getId());
         }
         model.addAttribute("usuario", usuario);
+        return "index";
+    }
+    
+    @RequestMapping(value = "/modificarPedido", method = RequestMethod.GET)
+    public String modificarPedido(
+            @RequestParam("id") String id,
+            Model model){
+        //(String direccion, Integer numeroUnidades, String fecha, String referencia, Integer idUsuario) 
+        
+        ApplicationContext contex = new ClassPathXmlApplicationContext("springjdbc.xml");
+        PedidoJDBCTemplate pedidoJDBCTemplate = (PedidoJDBCTemplate) contex.getBean("pedidoJDBCTemplate");
+        
+        String usuario = persona.getNombre();
+        Pedido pedido = null;
+        model.addAttribute("usuario", usuario);
+        if ("Anonimo".equals(usuario)) {
+            return "index";
+        }else{
+            pedido = pedidoJDBCTemplate.getPedido(id, String.valueOf(persona.getId()) );
+            model.addAttribute("pedido", pedido);
+            model.addAttribute("telefono", persona.getTelefono());
+            model.addAttribute("email", persona.getEmail());
+        }
+        return "modifocarPedido";
+    }
+    
+    @RequestMapping(value = "/actualizarPedido", method = RequestMethod.GET)
+    public String actualizarPedido(
+            @RequestParam("id") String idReserva,
+            @RequestParam("nombre") String nombre,
+            @RequestParam("email") String email,
+            @RequestParam("telefono") String telefono,
+            @RequestParam("direccion") String direccion,
+            @RequestParam("numeroUnidades") String numeroUnidades,
+            @RequestParam("fecha") String fecha,
+            @RequestParam("anotaciones") String anotaciones,
+            Model model){
+        //(String direccion, Integer numeroUnidades, String fecha, String referencia, Integer idUsuario) 
+        
+        ApplicationContext contex = new ClassPathXmlApplicationContext("springjdbc.xml");
+        PedidoJDBCTemplate pedidoJDBCTemplate = (PedidoJDBCTemplate) contex.getBean("pedidoJDBCTemplate");
+        
+        String usuario = persona.getNombre();
+        Pedido pedido = null;
+        model.addAttribute("usuario", usuario);
+//        if ("Anonimo".equals(usuario)== false) {
+//            try {
+                pedidoJDBCTemplate.update(idReserva, String.valueOf(persona.getId()), 
+                                        direccion, Integer.valueOf(numeroUnidades), fecha, anotaciones);
+//            } catch (Exception e) {
+//            }
+//        }
+        return "index";
+    }
+    
+    @RequestMapping(value = "/mvlPedido", method = RequestMethod.GET)
+    public String mvlregistrarPedido(
+            @RequestParam("drccn") String direccion,
+            @RequestParam("nUnidades") String numeroUnidades,
+            @RequestParam("fecha") String fecha,
+            @RequestParam("anota") String anotaciones,
+            @RequestParam("id") Integer id){
+        
+        ApplicationContext contex = new ClassPathXmlApplicationContext("springjdbc.xml");
+        PedidoJDBCTemplate pedidoJDBCTemplate = (PedidoJDBCTemplate) contex.getBean("pedidoJDBCTemplate");
+        
+        pedidoJDBCTemplate.create(direccion, Integer.parseInt(numeroUnidades), fecha, anotaciones, id );
+        
         return "index";
     }
     
