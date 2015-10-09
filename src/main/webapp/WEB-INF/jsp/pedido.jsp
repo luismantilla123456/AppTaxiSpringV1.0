@@ -60,19 +60,19 @@
                         <form action="registrarPedido.html" method="GET">
                             <div class="form-group">
                                 <label>Nombre</label>
-                                <input name="nombre" class="form-control" placeholder="juan" value="${pedido.nombre}" required>
+                                <input name="nombre" class="form-control" placeholder="juan" value="${nombre}" required>
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
-                                <input name="email" class="form-control" type="email" placeholder="juan1421@mimail.com" value="${pedido.email}" required>
+                                <input name="email" class="form-control" type="email" placeholder="juan1421@mimail.com" value="${email}" required>
                             </div>
                             <div class="form-group">
                                 <label>Telefono</label>
-                                <input name="telefono" class="form-control" pattern="^[1|2|3|4|5|6|7|8|9|0]\d{8}$" placeholder="94818755" value="${pedido.telefono}" required>
+                                <input name="telefono" class="form-control" pattern="^[1|2|3|4|5|6|7|8|9|0]\d{8}$" placeholder="94818755" value="${telefono}" required>
                             </div>
                             <div class="form-group">
                                 <label>Direccion</label>
-                                <input name="direccion" class="form-control" placeholder="Las flores de San Fernando 123" value="${pedido.direccion}" required>
+                                <input name="direccion" class="form-control" placeholder="Las flores de San Fernando 123" value="${direccion}" required>
                             </div>
                             <div class="form-group">
                                 <label>Numero unidades</label>

@@ -69,6 +69,7 @@ public class PedidoJDBCTemplate implements PedidoDAO{
     public void update(String idPedido, String idUsuario,String direccion, Integer numeroUnidades, String fecha, String referencia) {
         String sql = "UPDATE reserva SET ReservaDierccion = ?, ReservaNumeroUnidades = ?, ReservaFecha = ?, ReservaReferencia = ? WHERE idReserva = ? AND Usuario_idUsuario = ?";
         jdbcTemplateObject.update( sql, direccion,numeroUnidades,fecha,referencia,idPedido,idUsuario);
+    
     }
 
     @Override

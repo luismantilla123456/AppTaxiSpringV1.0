@@ -60,8 +60,11 @@ public class UsuarioJDBCTemplate implements UsuarioDAO{
     }
 
     @Override
-    public void update(Integer id, Integer age) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void update(String id,String nombre, String email, String telefono, String password, String direccion, String sexo) {
+        String sql = "UPDATE usuario SET UsuarioNombre = ?, UsuarioEmail = ?, UsuarioTelefono = ?, UsuarioPass = ?,"
+                + "UsuarioDireccion = ?, Sexo = ? WHERE idUsuario = ?";
+        jdbcTemplateObject.update( sql, nombre, email, telefono, password, direccion, sexo, id);
+    
     }
     
 }

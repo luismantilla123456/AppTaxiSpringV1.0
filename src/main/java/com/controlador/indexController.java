@@ -53,6 +53,22 @@ public class indexController {
         return "nuevoUsuario";
     }
     
+    @RequestMapping(value = "/modificarUsuario")
+    public String modificarUsuario(Model model){
+        
+        String usuario = persona.getNombre();
+        model.addAttribute("usuario", usuario);
+        if (usuario == "Anonimo") {
+            return "index";
+        }else{
+            model.addAttribute("nombre", persona.getNombre());
+            model.addAttribute("email", persona.getEmail());
+            model.addAttribute("telefono", persona.getTelefono());
+            model.addAttribute("direccion", persona.getDireccion());
+        }
+        return "modificarUsuario";
+    }
+    
     @RequestMapping(value = "/pedido")
     public String pedido(Model model){
         String usuario = persona.getNombre();

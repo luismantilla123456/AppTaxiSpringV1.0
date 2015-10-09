@@ -25,6 +25,6 @@ public interface UsuarioDAO {
     // elimina un usuari por su id
     public void delete(Integer id);
     //actualizar un usuario
-    public void update(Integer id,Integer age);
+    public void update(String id,String nombre, String email, String telefono, String password, String direccion, String sexo);
     
 }

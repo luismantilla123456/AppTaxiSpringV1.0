@@ -46,6 +46,25 @@ public class nuevoUsuarioController {
         return "index";
     }
     
+    @RequestMapping(value = "/modificarUsuarioData" , method = RequestMethod.GET)
+    public String modificaarUsario(
+            @RequestParam("nombre") String nombre,
+            @RequestParam("enmail") String email,
+            @RequestParam("telefono") String telefono,
+            @RequestParam("direccion") String direccion,
+            @RequestParam("password") String password,
+            @RequestParam("sexo") String sexo,
+            Model model){
+        ApplicationContext context =  new ClassPathXmlApplicationContext("springjdbc.xml");
+        UsuarioJDBCTemplate usuarioJDBCTemplate =(UsuarioJDBCTemplate)context.getBean("usuarioJDBCTemplate");
+
+        usuarioJDBCTemplate.update(String.valueOf(persona.getId()), nombre, email, telefono, password, direccion, sexo);
+//        List<Usuario> usuario = usuarioJDBCTemplate.listarUsuario();
+        String usuario = persona.getNombre();
+        model.addAttribute("usuario", usuario);
+        return "index";
+    }
+    
     
     
 }

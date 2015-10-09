@@ -60,6 +60,7 @@
                 <c:if test="${usuario!='Anonimo'}">
                         <a href="logOut.html" class="button"> Login out </a> 
                         <a href="reservas.html" class="button"> Mis Reservas </a>
+                        <a href="modificarUsuario.html" class="button"> Editar perfil </a>
                 </c:if>
                         
                 <c:if test="${usuario=='Anonimo'}">

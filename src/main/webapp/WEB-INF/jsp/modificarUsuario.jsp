@@ -60,26 +60,26 @@
                         
                         
                         
-                        <form method="GET" action="registrarUsuario.html">
+                        <form method="GET" action="modificarUsuarioData.html">
                             <div class="form-group">
                                 <label>Nombre</label>
-                                <input name="nombre" class="form-control" placeholder="juan" title="Se necesita un nombre" required>
+                                <input name="nombre" class="form-control" value="${nombre}" placeholder="juan" title="Se necesita un nombre" required>
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
-                                <input name ="enmail" type="email" class="form-control" placeholder="juan1421@mimail.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Telefono celular</label>
-                                <input name ="telefono" type="text" class="form-control" placeholder="94818755" pattern="^[1|2|3|4|5|6|7|8|9|0]\d{8}$" title="Se necesita un telefono" required>
+                                <input name ="enmail" type="email" class="form-control" value="${email}" placeholder="juan1421@mimail.com" required>
                             </div>
                             <div class="form-group">
                                 <label>Direccion</label>
-                                <input name="direccion" class="form-control" placeholder="Las flores de San Fernando 123" title="Se necesita una direccion" required>
+                                <input name="direccion" class="form-control" value="${direccion}" placeholder="Las flores de San Fernando 123" title="Se necesita una direccion" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Telefono celular</label>
+                                <input name ="telefono" type="text" class="form-control" value="${telefono}" placeholder="94818755" pattern="^[1|2|3|4|5|6|7|8|9|0]\d{8}$" title="Se necesita un telefono" required>
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input name="password" type="password" class="form-control" placeholder="Las flores de San Fernando 123" title="Se necesita una direccion" required>
+                                <input name="password" type="password" class="form-control" placeholder="******************" title="Se necesita una direccion" required>
                             </div>
                             <div class="form-group">
                                 <label>Sexo</label>
@@ -88,7 +88,7 @@
                                     <option value="0">Mujer</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-default">Registrarme</button>
+                            <button type="submit" class="btn btn-default">Modificar</button>
                         </form>
                     </div>
                 </div>

@@ -79,7 +79,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input name="password" type="password" class="form-control" placeholder="Las flores de San Fernando 123" title="Se necesita una direccion" required>
+                                <input name="password" type="password" class="form-control" placeholder="***************" title="Se necesita una direccion" required>
                             </div>
                             <div class="form-group">
                                 <label>Sexo</label>
